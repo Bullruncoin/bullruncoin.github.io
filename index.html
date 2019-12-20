@@ -170,6 +170,42 @@
                 
                 <div class="mbr-section-text mbr-white pb-3 ">
                     
+
+                    <p class="mbr-text mbr-fonts-style display-5">
+
+<div id="TokenPrice">
+
+</div>
+
+<script>
+
+   var TokenPrice = document.querySelector('#TokenPrice')
+
+    function GetPrice() {
+
+        fetch('https://marketdata.wavesplatform.com/api/trades/FJTs9cC9hcNvhawNzs4xhiiZdxFa6fCG9isZbjCdo3Kd/WAVES/1')
+
+        .then(res => res.json())
+
+        .then(data => {
+
+            TokenPrice.innerHTML = `
+
+            <h2>Current Price: <br> <br> 1 Bullrun Coin = <br> <br> <span style="background-color: #4169e1">${data['0'].price}</span> WAVES</h2><br> <br> 
+
+            `
+
+        })
+
+    } 
+
+window.onload=GetPrice();	
+</script>
+</p>
+
+
+
+
                 </div>
                 <div class="mbr-section-btn"><a class="btn btn-md btn-white-outline display-4" href="https://waves.exchange/dex-demo?assetId2=WAVES&assetId1=8LQW8f7P5d5PZM7GtZEBgaqRPGSzS3DfPuiXrURJ4AJS" target="_blank">Trade Bullruncoin</a></div>
             </div>
